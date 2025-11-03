@@ -314,3 +314,67 @@ main .section.navy li {
 .section.hidden {
   display: none;
 }
+
+/* Anchor navigation styling */
+main > div:first-child > ul:first-of-type {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  list-style: none;
+  padding: 20px 0;
+  margin: 20px 0 40px 0;
+  border-bottom: 2px solid var(--border-color);
+}
+
+main > div:first-child > ul:first-of-type li {
+  margin: 0;
+}
+
+main > div:first-child > ul:first-of-type a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  border-radius: 4px;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+main > div:first-child > ul:first-of-type a:hover {
+  background-color: var(--brand-blue);
+  color: var(--background-color);
+  text-decoration: none;
+}
+
+/* Section style variants */
+main .section.white {
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 40px 0;
+}
+
+main .section.light-grey {
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 50px 0;
+}
+
+/* Button sections styling */
+main .section.white p strong a {
+  display: inline-block;
+  padding: 16px 32px;
+  background-color: var(--brand-blue);
+  color: var(--background-color);
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+main .section.white p strong a:hover {
+  background-color: var(--brand-navy);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 172, 229, 0.3);
+}
