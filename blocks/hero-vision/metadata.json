@@ -1,0 +1,43 @@
+{
+  "variantName": "hero-vision",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2025-11-03T08:07:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.kddi.com/english/vision/",
+    "originPage": "KDDI Vision & Strategies",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "vision-hero",
+    "imagePattern": "large",
+    "textLength": "medium"
+  },
+  "contentPattern": {
+    "structure": "heading + title text",
+    "headingMaxLength": 50,
+    "descriptionMaxLength": 0,
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "corporate vision pages",
+      "mission statement pages",
+      "landing pages with hero banners"
+    ],
+    "notSuitableFor": [
+      "product pages",
+      "blog posts",
+      "content-heavy pages"
+    ],
+    "similarVariants": []
+  },
+  "usage": {
+    "pagesUsing": ["/english/vision/index"],
+    "reuseCount": 1,
+    "lastUsed": "2025-11-03T08:07:00.000Z"
+  }
+}

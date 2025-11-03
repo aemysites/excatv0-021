@@ -1,6 +1,7 @@
 .columns > div {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
 .columns img {
@@ -17,13 +18,25 @@
 
 .columns > div > .columns-img-col img {
   display: block;
+  border-radius: 8px;
+}
+
+.columns ul {
+  list-style-position: outside;
+  padding-left: 20px;
+  margin: 16px 0;
+}
+
+.columns li {
+  margin-bottom: 12px;
+  line-height: 1.7;
 }
 
 @media (width >= 900px) {
   .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 48px;
   }
 
   .columns > div > div {
