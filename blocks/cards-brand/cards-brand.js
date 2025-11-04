@@ -15,50 +15,39 @@ export default function decorate(block) {
       else div.className = 'cards-brand-card-body';
     });
 
-    // For multi-column layouts with h4 headings, restructure:
-    // Extract h4 headings as full-width bars, then create columns for content
+    // For multi-column layouts with h4 headings, restructure to dl/dt/dd:
+    // Create separate dl elements for each column (matching original site structure)
     const cardBodies = li.querySelectorAll('.cards-brand-card-body');
     if (cardBodies.length > 1) {
-      // Collect all h4 headings
-      const headings = [];
+      // Clear li and create dl elements for each column
+      li.innerHTML = '';
+
       cardBodies.forEach((cardBody) => {
+        // Create a dl element for this column
+        const dl = document.createElement('dl');
+        dl.className = 'cards-brand-dl';
+
+        // Extract h4 as dt
         const h4 = cardBody.querySelector('h4');
         if (h4) {
-          headings.push(h4.textContent);
-          h4.remove();
-        }
-      });
-
-      // Create full-width heading bar
-      const headingBar = document.createElement('div');
-      headingBar.className = 'cards-brand-heading-bar';
-      headings.forEach((text) => {
-        const h4 = document.createElement('h4');
-        h4.textContent = text;
-        headingBar.appendChild(h4);
-      });
-
-      // Create a wrapper for the content columns
-      const columnsWrapper = document.createElement('div');
-      columnsWrapper.className = 'cards-brand-columns';
-
-      cardBodies.forEach((cardBody) => {
-        // Create a column div for the content
-        const column = document.createElement('div');
-        column.className = 'cards-brand-column';
-
-        // Move all content from cardBody to column
-        while (cardBody.firstChild) {
-          column.appendChild(cardBody.firstChild);
+          const dt = document.createElement('dt');
+          dt.textContent = h4.textContent;
+          dl.appendChild(dt);
         }
 
-        columnsWrapper.appendChild(column);
-      });
+        // Create dd for content
+        const dd = document.createElement('dd');
 
-      // Clear li and add heading bar + columns wrapper
-      li.innerHTML = '';
-      li.appendChild(headingBar);
-      li.appendChild(columnsWrapper);
+        // Move all remaining content (after removing h4) to dd
+        [...cardBody.children].forEach((child) => {
+          if (child.tagName !== 'H4') {
+            dd.appendChild(child.cloneNode(true));
+          }
+        });
+
+        dl.appendChild(dd);
+        li.appendChild(dl);
+      });
     }
 
     ul.append(li);

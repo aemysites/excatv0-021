@@ -13,8 +13,8 @@
   text-align: center;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
-  gap: 0;
+  flex-direction: row;
+  gap: 4px;
   width: 100%;
   max-width: 720px;
 }
@@ -29,18 +29,17 @@
   border: 1px solid #d0d0d0;
 }
 
-/* Full-width heading bar - contains h4 elements side-by-side */
-.cards-brand-heading-bar {
+/* dl/dt/dd structure - each dl is a column (358px) */
+.cards-brand-dl {
+  flex: 1;
+  max-width: 358px;
+  margin: 0;
   display: flex;
-  flex-direction: row;
-  gap: 4px;
-  width: 100%;
-  margin-bottom: 0;
+  flex-direction: column;
 }
 
-/* h4 headings - each takes equal space */
-.cards-brand-heading-bar h4 {
-  flex: 1;
+/* dt headings - 358px wide per column */
+.cards-brand-dl dt {
   font-size: 15px;
   font-weight: 700;
   padding: 10px;
@@ -49,46 +48,38 @@
 }
 
 /* Business brand headings - light lavender background */
-.cards-brand.business .cards-brand-heading-bar h4 {
+.cards-brand.business .cards-brand-dl dt {
   background-color: rgb(223, 223, 249);
   color: rgb(34, 34, 34);
 }
 
 /* Service brand headings - light gray background */
-.cards-brand.service .cards-brand-heading-bar h4 {
+.cards-brand.service .cards-brand-dl dt {
   background-color: rgb(244, 244, 244);
   color: rgb(34, 34, 34);
 }
 
-/* Columns wrapper - contains column divs side-by-side */
-.cards-brand-columns {
-  display: flex;
-  flex-direction: row;
-  gap: 4px;
-  width: 100%;
+/* dd content container */
+.cards-brand-dl dd {
+  margin: 20px 0;
+  padding: 0;
 }
 
-/* Each column */
-.cards-brand-column {
-  flex: 1;
-  max-width: 358px;
-}
-
-/* Content container within columns */
-.cards-brand-column p {
-  line-height: 0;
+/* Content paragraph within dd */
+.cards-brand-dl dd p {
+  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 0;
   background-color: var(--background-color);
-  border: 1px solid #d0d0d0;
-  margin-top: 20px;
-  min-height: 140px;
+  border: none;
+  margin: 0;
+  min-height: auto;
 }
 
-/* Images within columns */
-.cards-brand-column img {
+/* Images within dd */
+.cards-brand-dl dd img {
   width: 180px;
   height: auto;
   object-fit: contain;
@@ -112,15 +103,15 @@
   flex: 1;
 }
 
-/* Service brand - second column has multiple images horizontally */
-.cards-brand.service .cards-brand-column:nth-child(2) p {
+/* Service brand - second dl has multiple images horizontally */
+.cards-brand.service .cards-brand-dl:nth-child(2) dd p {
   flex-direction: row;
   gap: 10px;
   min-height: 140px;
   flex-wrap: wrap;
 }
 
-.cards-brand.service .cards-brand-column:nth-child(2) img {
+.cards-brand.service .cards-brand-dl:nth-child(2) dd img {
   width: auto;
   height: auto;
   max-width: 100px;
