@@ -1,42 +1,11 @@
-/* Full-width hero container */
-.hero-vision-container {
-  max-width: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.hero-vision-container .hero-vision-wrapper {
-  max-width: unset;
-  padding: 0;
-}
-
 .hero-vision {
   position: relative;
-  padding: 0;
-  min-height: 300px;
+  padding: 40px 0;
   width: 100%;
-  overflow: hidden;
+  text-align: center;
 }
 
-.hero-vision-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-vision h1 {
-  position: absolute;
-  left: 15px;
-  bottom: 30px;
-  color: #fff;
-  font-size: 5.5vw;
-  line-height: 1.3;
-  font-weight: bold;
-  margin: 0;
-  z-index: 2;
-  text-shadow: none;
-}
-
+.hero-vision h1,
 .hero-vision h2,
 .hero-vision h3,
 .hero-vision h4,
@@ -46,72 +15,15 @@
   display: none;
 }
 
-.hero-vision.no-image h1 {
-  color: var(--text-color);
-  position: static;
-}
-
-.hero-vision > picture {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-vision > picture img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+.hero-vision picture {
   display: block;
+  width: 100%;
+  max-width: 100%;
 }
 
-/* Mobile styles */
-@media (width < 768px) {
-  .hero-vision {
-    min-height: 250px;
-  }
-
-  .hero-vision h1 {
-    font-size: 5.5vw;
-    left: 15px;
-    bottom: 20px;
-  }
-}
-
-/* Tablet and Desktop */
-@media (width >= 768px) {
-  .hero-vision {
-    min-height: 400px;
-  }
-
-  .hero-vision h1 {
-    font-size: 48px;
-    left: 15px;
-    bottom: 50px;
-  }
-}
-
-@media (width >= 1024px) {
-  .hero-vision {
-    min-height: 500px;
-  }
-
-  .hero-vision h1 {
-    font-size: 60px;
-    left: 15px;
-  }
-}
-
-@media (width >= 1440px) {
-  .hero-vision {
-    min-height: 600px;
-  }
-
-  .hero-vision h1 {
-    font-size: 72px;
-  }
+.hero-vision picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }

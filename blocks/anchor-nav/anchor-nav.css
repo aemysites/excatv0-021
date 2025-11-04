@@ -1,0 +1,49 @@
+/* Anchor Navigation Block */
+.anchor-nav {
+  margin: 20px 0 40px 0;
+  border-bottom: 2px solid var(--border-color, #e0e0e0);
+}
+
+.anchor-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.anchor-nav ul li {
+  margin: 0;
+}
+
+.anchor-nav a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--light-color, #f5f5f5);
+  color: var(--text-color, #333);
+  border-radius: 4px;
+  font-size: var(--body-font-size-s, 14px);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.anchor-nav a:hover {
+  background-color: var(--brand-blue, #0066cc);
+  color: var(--background-color, #fff);
+  text-decoration: none;
+}
+
+/* Mobile responsive */
+@media (width < 768px) {
+  .anchor-nav ul {
+    gap: 12px;
+  }
+
+  .anchor-nav a {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}

@@ -150,7 +150,7 @@ pre {
 }
 
 main > div {
-  margin: 40px 16px;
+  margin: 0;
 }
 
 input,
@@ -246,7 +246,7 @@ main img {
 
 /* sections */
 main > .section {
-  margin: 40px 0;
+  margin: 0;
 }
 
 main > .section > div {
@@ -315,38 +315,6 @@ main .section.navy li {
   display: none;
 }
 
-/* Anchor navigation styling */
-main > div:first-child > ul:first-of-type {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px 24px;
-  list-style: none;
-  padding: 20px 0;
-  margin: 20px 0 40px 0;
-  border-bottom: 2px solid var(--border-color);
-}
-
-main > div:first-child > ul:first-of-type li {
-  margin: 0;
-}
-
-main > div:first-child > ul:first-of-type a {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: var(--light-color);
-  color: var(--text-color);
-  border-radius: 4px;
-  font-size: var(--body-font-size-s);
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-main > div:first-child > ul:first-of-type a:hover {
-  background-color: var(--brand-blue);
-  color: var(--background-color);
-  text-decoration: none;
-}
-
 /* Section style variants */
 main .section.white {
   background-color: var(--background-color);
@@ -360,21 +328,131 @@ main .section.light-grey {
   padding: 50px 0;
 }
 
-/* Button sections styling */
+/* Vision section styling (目指す姿) */
+main .section.light-grey:has(.hero-vision) {
+  padding: 50px 0 0 0;
+}
+
+main .section.light-grey:has(.hero-vision) h2 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+main .section.light-grey:has(.hero-vision) p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+@media (width >= 900px) {
+  main .section.light-grey:has(.hero-vision) h2 {
+    font-size: 40px;
+  }
+}
+
+/* Action button sections styling (行動指針 and 人権方針) */
+main .section.white:has(p strong a) h2 {
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--text-color);
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+
 main .section.white p strong a {
   display: inline-block;
-  padding: 16px 32px;
-  background-color: var(--brand-blue);
-  color: var(--background-color);
-  border-radius: 4px;
-  font-weight: 600;
+  padding: 0 50px 10px 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-size: 15px;
+  font-weight: 400;
   text-decoration: none;
+  position: relative;
+}
+
+main .section.white p strong a::after {
+  content: '→';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 36px;
+  height: 28px;
+  background-color: var(--brand-navy);
+  color: var(--background-color);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
   transition: all 0.3s ease;
 }
 
 main .section.white p strong a:hover {
-  background-color: var(--brand-navy);
+  color: var(--link-hover-color);
   text-decoration: none;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(30, 172, 229, 0.3);
+}
+
+main .section.white p strong a:hover::after {
+  background-color: var(--brand-blue);
+  transform: scale(1.1);
+}
+
+@media (width >= 900px) {
+  main .section.white:has(p strong a) h2 {
+    font-size: 40px;
+  }
+}
+
+/* Brand message section styling */
+main .section.light-grey:has(.cards-brand) h2 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+main .section.light-grey:has(.cards-brand) > div > p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* h3 headings in brand section - styled as colored bars */
+main .section.light-grey:has(.cards-brand) h3 {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px;
+  margin: 40px 0 0 0;
+  text-align: center;
+}
+
+/* First h3 - 企業（コーポレート）ブランド - dark navy background */
+main .section.light-grey:has(.cards-brand) h3:first-of-type {
+  background-color: rgb(14, 13, 106);
+  color: rgb(255, 255, 255);
+}
+
+/* Second h3 - 事業ブランド - light lavender background */
+main .section.light-grey:has(.cards-brand) h3:nth-of-type(2) {
+  background-color: rgb(223, 223, 249);
+  color: rgb(34, 34, 34);
+  margin-top: 20px;
+}
+
+/* Third h3 - サービスブランド - light gray background */
+main .section.light-grey:has(.cards-brand) h3:nth-of-type(3) {
+  background-color: rgb(244, 244, 244);
+  color: rgb(34, 34, 34);
+  margin-top: 20px;
+}
+
+@media (width >= 900px) {
+  main .section.light-grey:has(.cards-brand) h2 {
+    font-size: 40px;
+  }
+
+  main .section.light-grey:has(.cards-brand) h3 {
+    font-size: 15px;
+  }
 }
