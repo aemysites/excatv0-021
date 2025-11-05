@@ -4,10 +4,11 @@ header .nav-wrapper {
   width: 100%;
   z-index: 2;
   position: fixed;
-  height: var(--nav-height);
+  height: auto;
+  min-height: var(--nav-height);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 2px 4px rgba(0 0 0 / 10%);
+  border-bottom: 1px solid #e0e0e0;
 }
 
 header nav {
@@ -38,31 +39,51 @@ header nav[aria-expanded='true'] {
 @media (width >= 900px) {
   header nav {
     display: grid;
-    grid-template:
-      'tools tools tools' auto
-      'brand sections bottom' auto / auto 1fr auto;
-    gap: 0;
-    max-width: 100%;
-    padding: 0;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "brand tools"
+      "sections sections";
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
     align-items: center;
-    row-gap: 0;
+    gap: 0;
   }
 
-  header nav .nav-tools {
-    padding: 12px 40px;
-    border-bottom: 1px solid #e0e0e0;
+  header nav .nav-hamburger {
+    display: none;
   }
 
   header nav .nav-brand {
-    padding: 12px 40px;
+    grid-area: brand;
+    padding: 16px 0;
+    justify-self: start;
+  }
+
+  header nav .nav-tools {
+    grid-area: tools;
+    padding: 16px 0;
+    justify-self: end;
   }
 
   header nav .nav-sections {
-    padding: 12px 0;
+    grid-area: sections;
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
   }
 
-  header nav .nav-bottom-container {
-    padding: 12px 40px 12px 0;
+  header nav .nav-sections > .default-content-wrapper {
+    flex: 0 0 auto;
+  }
+
+  header nav .nav-sections .nav-bottom-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    flex-shrink: 0;
   }
 
   header nav[aria-expanded='true'] {
@@ -267,9 +288,10 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 16px;
+    gap: 24px;
     margin: 0;
     align-items: center;
+    flex-wrap: nowrap;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
@@ -394,17 +416,24 @@ header .nav-bottom-container {
   align-items: center;
   justify-content: flex-end;
   padding: 0;
-  font-size: 12px;
+  font-size: 13px;
   white-space: nowrap;
+}
+
+header .nav-bottom-container::before {
+  content: ':';
+  margin: 0 16px;
+  color: #333;
+  font-size: 18px;
 }
 
 header .nav-bottom-container p {
   margin: 0;
-  font-size: 12px;
+  font-size: 13px;
   color: #333;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 header .nav-bottom-container a {
