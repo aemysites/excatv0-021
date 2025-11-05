@@ -1,16 +1,18 @@
-/* Anchor Navigation Block */
+/* Anchor Navigation Block - KDDI Style */
 .anchor-nav {
-  margin: 20px 0 40px 0;
-  border-bottom: 2px solid var(--border-color, #e0e0e0);
+  margin: 40px 0;
+  padding: 0;
 }
 
 .anchor-nav ul {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px 24px;
+  flex-wrap: nowrap;
+  gap: 8px;
   list-style: none;
-  padding: 20px 0;
+  padding: 0;
   margin: 0;
+  justify-content: center;
+  overflow-x: auto;
 }
 
 .anchor-nav ul li {
@@ -18,32 +20,65 @@
 }
 
 .anchor-nav a {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: var(--light-color, #f5f5f5);
-  color: var(--text-color, #333);
-  border-radius: 4px;
-  font-size: var(--body-font-size-s, 14px);
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  padding: 12px 24px;
+  background-color: #fff !important;
+  color: #333 !important;
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 400;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   white-space: nowrap;
+  line-height: 1.6;
+  position: relative;
+}
+
+/* Dropdown arrow indicator */
+.anchor-nav a::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 10px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #666;
+  transition: transform 0.2s ease;
 }
 
 .anchor-nav a:hover {
-  background-color: var(--brand-blue, #0066cc);
-  color: var(--background-color, #fff);
+  background-color: #f8f8f8 !important;
+  border-color: #999;
+  color: #000 !important;
   text-decoration: none;
 }
 
+.anchor-nav a:hover::after {
+  transform: translateY(2px);
+}
+
 /* Mobile responsive */
-@media (width < 768px) {
+@media (width < 900px) {
   .anchor-nav ul {
     gap: 12px;
+    justify-content: flex-start;
   }
 
   .anchor-nav a {
-    padding: 6px 12px;
+    min-width: auto;
+    padding: 10px 20px;
     font-size: 13px;
+  }
+
+  .anchor-nav a::after {
+    margin-left: 6px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 4px;
   }
 }

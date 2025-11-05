@@ -1,11 +1,19 @@
 # 企業理念
 
-- [企業理念について](/)
-- [社是](/)
-- [企業理念](/)
-- [KDDIフィロソフィ](/)
-- [行動指針](/)
-- [KDDIグループ人権方針](/)
++----------------------+
+| Section Metadata     |
++---------+------------+
+| style   | light-grey |
++---------+------------+
+
+| Anchor Nav                                                                                                 |
+|------------------------------------------------------------------------------------------------------------|
+| [企業理念について](https://main--excatv0-021--aemysites.aem.page/corporate/philosophy/#企業理念について)         |
+| [社是](https://main--excatv0-021--aemysites.aem.page/corporate/philosophy/#社是)                           |
+| [企業理念](https://main--excatv0-021--aemysites.aem.page/corporate/philosophy/#企業理念-1)                   |
+| [KDDIフィロソフィ](https://main--excatv0-021--aemysites.aem.page/corporate/philosophy/#kddiフィロソフィ)       |
+| [行動指針](https://main--excatv0-021--aemysites.aem.page/corporate/philosophy/#行動指針)                     |
+| [KDDIグループ人権方針](https://main--excatv0-021--aemysites.aem.page/corporate/philosophy/#kddiグループ人権方針) |
 
 ---
 

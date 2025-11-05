@@ -68,9 +68,9 @@
 
 KDDIに関する情報をお届けする、KDDI公式アカウント
 
-- [<span class="icon icon-x"></span>](https://twitter.com/official_kddi)
-- [<span class="icon icon-facebook"></span>](https://www.facebook.com/officialkddi)
-- [<span class="icon icon-youtube"></span>](https://www.youtube.com/user/KDDIofficial)
+- [:x:](https://twitter.com/official_kddi)
+- [:facebook:](https://www.facebook.com/officialkddi)
+- [:youtube:](https://www.youtube.com/user/KDDIofficial)
 
 ---
 

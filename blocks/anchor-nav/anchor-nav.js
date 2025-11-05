@@ -1,13 +1,24 @@
 /**
  * Anchor Navigation Block
- * Converts a simple list of links into styled navigation tabs
+ * Converts a table of links into styled navigation tabs
  * for anchor/jump links within the page
  */
 export default function decorate(block) {
-  // The block already contains the list structure from markdown
-  // Just add the appropriate styling class
-  const ul = block.querySelector('ul');
-  if (ul) {
-    ul.classList.add('anchor-nav-list');
-  }
+  // Convert the block structure (rows of single-cell divs) into a ul/li list
+  const ul = document.createElement('ul');
+
+  // Get all rows (each row has a single cell with a link)
+  const rows = [...block.children];
+  rows.forEach((row) => {
+    const link = row.querySelector('a');
+    if (link) {
+      const li = document.createElement('li');
+      li.appendChild(link);
+      ul.appendChild(li);
+    }
+  });
+
+  // Replace block content with the ul
+  block.textContent = '';
+  block.appendChild(ul);
 }
