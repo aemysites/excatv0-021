@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="/scripts/aem.js" type="module"></script>
+<script src="/scripts/scripts.js" type="module"></script>
+<link rel="stylesheet" href="/styles/styles.css"/>
+</head>
+<body>
+<header></header>
+<main>
+<div><h1 id="anchor-navigation-autoblock">Anchor Navigation Autoblock</h1><h2 id="overview">Overview</h2><p>The <strong>anchor-nav</strong> block is automatically created from simple anchor link lists in your markdown, demonstrating the power of EDS autoblocking.</p><h2 id="how-autoblocking-works">How Autoblocking Works</h2><h3 id="detection-logic-scriptsscriptsjs">1. Detection Logic (scripts/scripts.js)</h3><p>The <code>buildAutoBlocks()</code> function automatically detects anchor navigation patterns:</p><pre><code class="language-javascript">function buildAutoBlocks(main) {
+  // Find the first list in the first section
+  const firstSection = main.querySelector(':scope > div');
+  const firstList = firstSection?.querySelector('ul');
+
+  // Check if ALL links are anchor links (start with #)
+  const links = firstList?.querySelectorAll('a');
+  const allAnchors = links.length > 0 &#x26;&#x26;
+    [...links].every((link) => link.getAttribute('href')?.startsWith('#'));
+
+  if (allAnchors) {
+    // Convert to anchor-nav block
+  }
+}
+</code></pre><h3 id="markdown-authoring">2. Markdown Authoring</h3><p>Simply write your anchor links as a regular list:</p><pre><code class="language-markdown"># Page Title
+
+- [Section 1](#section-1)
+- [Section 2](#section-2)
+- [Section 3](#section-3)
+
+## Section 1
+Content here...
+</code></pre><h3 id="automatic-conversion">3. Automatic Conversion</h3><p>The autoblocking system:</p><ol>
+<li><strong>Detects</strong> the list contains only anchor links</li>
+<li><strong>Creates</strong> an <code>anchor-nav</code> block element</li>
+<li><strong>Wraps</strong> the list in the block structure</li>
+<li><strong>Decorates</strong> it with the anchor-nav.js and anchor-nav.css</li>
+</ol><h3 id="result">4. Result</h3><p>The simple list is transformed into a styled navigation bar with:</p><ul>
+<li>Horizontal flexbox layout</li>
+<li>Pill-style buttons</li>
+<li>Hover effects</li>
+<li>Mobile responsive design</li>
+<li>Bottom border separator</li>
+</ul><h2 id="block-files">Block Files</h2><h3 id="blocksanchor-navanchor-navjs">blocks/anchor-nav/anchor-nav.js</h3><p>Minimal decoration - just adds CSS class to the list.</p><h3 id="blocksanchor-navanchor-navcss">blocks/anchor-nav/anchor-nav.css</h3><p>Provides all the styling:</p><ul>
+<li>Flexbox horizontal layout</li>
+<li>Gap spacing</li>
+<li>Pill-style links</li>
+<li>Hover transitions</li>
+<li>Mobile breakpoints</li>
+</ul><h2 id="benefits-of-autoblocking">Benefits of Autoblocking</h2><ol>
+<li><strong>Simpler Authoring</strong>: Content authors just write a list, no block syntax needed</li>
+<li><strong>Automatic Detection</strong>: System recognizes patterns and applies blocks</li>
+<li><strong>Consistency</strong>: All anchor navigation looks the same across the site</li>
+<li><strong>Maintainability</strong>: Update block CSS, all instances update automatically</li>
+</ol><h2 id="example-usage">Example Usage</h2><p><strong>In your markdown:</strong></p><pre><code class="language-markdown">- [企業理念について](#企業理念について)
+- [社是](#社是)
+- [企業理念](#企業理念-1)
+- [KDDIフィロソフィ](#kddiフィロソフィ)
+</code></pre><p><strong>Automatically becomes:</strong></p><pre><code class="language-html">&#x3C;div class="anchor-nav block">
+  &#x3C;div>
+    &#x3C;div>
+      &#x3C;ul class="anchor-nav-list">
+        &#x3C;li>&#x3C;a href="#企業理念について">企業理念について&#x3C;/a>&#x3C;/li>
+        &#x3C;li>&#x3C;a href="#社是">社是&#x3C;/a>&#x3C;/li>
+        &#x3C;li>&#x3C;a href="#企業理念-1">企業理念&#x3C;/a>&#x3C;/li>
+        &#x3C;li>&#x3C;a href="#kddiフィロソフィ">KDDIフィロソフィ&#x3C;/a>&#x3C;/li>
+      &#x3C;/ul>
+    &#x3C;/div>
+  &#x3C;/div>
+&#x3C;/div>
+</code></pre><h2 id="when-autoblocking-runs">When Autoblocking Runs</h2><p>Autoblocking executes during page decoration, specifically in the <code>decorateMain()</code> function before <code>decorateSections()</code> and <code>decorateBlocks()</code>. This ensures blocks are recognized and decorated properly.</p><h2 id="extending-autoblocking">Extending Autoblocking</h2><p>To add more autoblock patterns, modify <code>buildAutoBlocks()</code> in scripts/scripts.js. Common patterns:</p><ul>
+<li>First paragraph detection (hero blocks)</li>
+<li>Image + caption patterns</li>
+<li>Quote detection</li>
+<li>Video embeds</li>
+<li>Table transformations</li>
+</ul></div>
+<div><p><strong>Created for KDDI Philosophy Page Migration</strong></p></div>
+</main>
+<footer></footer>
+</body>
+</html>

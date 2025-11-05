@@ -79,13 +79,84 @@
 
 /* Cards without images - for navigation */
 .cards > ul > li:not(:has(img)) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 120px;
-  text-align: center;
 }
 
 .cards > ul > li:not(:has(img)) .cards-card-body {
   width: 100%;
+}
+
+/* Multi-column lists for cards with many items */
+.cards .cards-card-body ul:has(> li:nth-child(15)) {
+  column-count: 2;
+  column-gap: 16px;
+  font-size: 14px;
+}
+
+.cards .cards-card-body ul:has(> li:nth-child(15)) li {
+  margin-bottom: 4px;
+}
+
+@media (width < 768px) {
+  .cards .cards-card-body ul:has(> li:nth-child(15)) {
+    column-count: 1;
+  }
+}
+
+/* Enhanced styling for no-images cards */
+.cards.no-images > ul {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 24px;
+}
+
+.cards.no-images > ul > li {
+  background-color: #fafafa;
+  padding: 0;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards.no-images .cards-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards.no-images .cards-card-body strong {
+  color: var(--brand-navy);
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+  margin: 0 0 16px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cards.no-images .cards-card-body ul {
+  margin-top: 0;
+  padding-left: 20px;
+}
+
+.cards.no-images .cards-card-body li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.cards.no-images .cards-card-body p {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+@media (width >= 900px) {
+  .cards.no-images > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Make 4th card (第4章) span 2 columns */
+  .cards.no-images > ul > li:nth-child(4) {
+    grid-column: span 2;
+  }
 }

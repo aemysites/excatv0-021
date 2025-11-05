@@ -136,17 +136,7 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
   const { topSections, mainSections, bottomSections } = processSectionsWithMetadata(nav);
-
-  // Handle the 4th section as bottom section if it exists
-  const allSections = Array.from(nav.children);
-  if (allSections.length > 3) {
-    // If there's a 4th section, mark it as bottom
-    allSections[3].classList.add('bottom');
-    bottomSections.push(allSections[3]);
-  }
-
-  // Keep only the first 3 sections in nav (brand, sections, tools)
-  nav.replaceChildren(...mainSections.slice(0, 3));
+  nav.replaceChildren(...mainSections);
 
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
@@ -175,29 +165,8 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
-  const navTools = nav.querySelector('.nav-tools');
-  if (navTools) {
-    // Remove button classes from all links in nav-tools
-    navTools.querySelectorAll('.button').forEach((button) => {
-      button.className = '';
-      const buttonContainer = button.closest('.button-container');
-      if (buttonContainer) {
-        buttonContainer.className = '';
-      }
-    });
-  }
-
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
-    // Remove button classes from all links in nav-sections
-    navSections.querySelectorAll('.button').forEach((button) => {
-      button.className = '';
-      const buttonContainer = button.closest('.button-container');
-      if (buttonContainer) {
-        buttonContainer.className = '';
-      }
-    });
-
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
       navSection.addEventListener('click', () => {

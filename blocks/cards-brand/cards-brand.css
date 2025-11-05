@@ -2,40 +2,93 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  grid-gap: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
 }
 
 .cards-brand > ul > li {
-  border: 1px solid var(--border-color);
   background-color: var(--background-color);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  overflow: hidden;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  width: 100%;
+  max-width: 720px;
 }
 
-.cards-brand > ul > li:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
+/* Single-column card (corporate brand - KDDI logo only) */
+.cards-brand > ul > li:has(.cards-brand-card-image) {
+  margin: 20px 0;
+  flex-direction: column;
 }
 
-.cards-brand .cards-brand-card-body {
-  margin: 24px;
+.cards-brand > ul > li:has(.cards-brand-card-image) .cards-brand-card-image {
+  border: 1px solid #d0d0d0;
+}
+
+/* dl/dt/dd structure - each dl is a column (358px) */
+.cards-brand-dl {
+  flex: 1;
+  max-width: 358px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* dt headings - 358px wide per column */
+.cards-brand-dl dt {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px;
+  margin: 0;
   text-align: center;
 }
 
-.cards-brand .cards-brand-card-body h3,
-.cards-brand .cards-brand-card-body h4 {
-  color: var(--brand-navy);
-  margin-top: 0;
-  font-size: 18px;
+/* Business brand headings - light lavender background */
+.cards-brand.business .cards-brand-dl dt {
+  background-color: rgb(223, 223, 249);
+  color: rgb(34, 34, 34);
 }
 
-.cards-brand .cards-brand-card-body p {
-  font-size: 14px;
-  color: var(--dark-color);
-  line-height: 1.6;
+/* Service brand headings - light gray background */
+.cards-brand.service .cards-brand-dl dt {
+  background-color: rgb(244, 244, 244);
+  color: rgb(34, 34, 34);
+}
+
+/* dd content container */
+.cards-brand-dl dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Content paragraph within dd */
+.cards-brand-dl dd p {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  background-color: var(--background-color);
+  border: 1px solid #d0d0d0;
+  margin: 0;
+  min-height: 100px;
+}
+
+/* Images within dd */
+.cards-brand-dl dd img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Legacy card-body styling (for single column cards) */
+.cards-brand .cards-brand-card-body {
+  display: flex;
+  flex-direction: column;
 }
 
 .cards-brand .cards-brand-card-image {
@@ -43,19 +96,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px;
+  padding: 20px;
   background-color: var(--background-color);
+  border: 1px solid #d0d0d0;
+  margin-top: 20px;
+  flex: 1;
 }
 
-.cards-brand > ul > li img {
-  width: 100%;
-  max-width: 200px;
+/* Service brand - second dl has multiple images horizontally */
+.cards-brand.service .cards-brand-dl:nth-child(2) dd p {
+  flex-direction: row;
+  gap: 10px;
+  min-height: 140px;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.cards-brand.service .cards-brand-dl:nth-child(2) dd p a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  background-color: var(--background-color);
+  border: 1px solid #d0d0d0;
+  min-width: 100px;
+}
+
+.cards-brand.service .cards-brand-dl:nth-child(2) dd img {
+  width: auto;
   height: auto;
-  object-fit: contain;
+  max-width: 80px;
+  max-height: 50px;
 }
 
 @media (width >= 900px) {
-  .cards-brand > ul {
-    grid-template-columns: repeat(3, 1fr);
+  .cards-brand .cards-brand-card-image {
+    padding: 30px;
   }
 }

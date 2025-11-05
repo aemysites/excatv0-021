@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDDIフィロソフィ - Cards Layout Demo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .cards {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cards > ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 24px;
+        }
+
+        .cards > ul > li {
+            background-color: #fafafa;
+            padding: 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cards > ul > li > div {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Make 4th card (第4章) span 2 columns */
+        .cards > ul > li:nth-child(4) {
+            grid-column: span 2;
+        }
+
+        .cards strong {
+            color: #333;
+            font-size: 16px;
+            font-weight: 600;
+            display: block;
+            margin: 0 0 16px 0;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cards ul {
+            margin-top: 0;
+            padding-left: 20px;
+        }
+
+        .cards li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .cards p {
+            margin-top: 0;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* Multi-column lists for cards with many items */
+        .cards > ul > li:nth-child(4) ul {
+            column-count: 2;
+            column-gap: 16px;
+            font-size: 14px;
+        }
+
+        .cards > ul > li:nth-child(4) ul li {
+            margin-bottom: 4px;
+        }
+
+        @media (width < 900px) {
+            .cards > ul {
+                grid-template-columns: 1fr;
+            }
+
+            .cards > ul > li:nth-child(4) {
+                grid-column: span 1;
+            }
+
+            .cards > ul > li:nth-child(4) ul {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>KDDIフィロソフィ</h1>
+
+    <div class="cards no-images">
+        <ul>
+            <li>
+                <div>
+                    <strong>第1章 目指す姿</strong>
+                    <ul>
+                        <li>「つなぐチカラ」を進化させる</li>
+                        <li>お客さま第一に考える</li>
+                        <li>夢を描き、追い続ける</li>
+                        <li>驚きを超え、感動をお客さまに届ける</li>
+                        <li>多様性を活かす</li>
+                        <li>365日、守るのが使命</li>
+                        <li>真のグローバル企業を目指す</li>
+                        <li>一人ひとりがKDDI</li>
+                    </ul>
+                </div>
+            </li>
+
+            <li>
+                <div>
+                    <strong>第2章 経営の原則</strong>
+                    <ul>
+                        <li>事業の目的、意義を明確にする</li>
+                        <li>人権を尊重する</li>
+                        <li>公明正大に利益を追求する</li>
+                        <li>ガラス張りで経営する</li>
+                        <li>売上を最大に、経費を最小に</li>
+                        <li>筋肉質の経営に徹する</li>
+                        <li>リアルタイムで経営する</li>
+                    </ul>
+                </div>
+            </li>
+
+            <li>
+                <div>
+                    <strong>第3章 仕事の流儀</strong>
+                    <p>高い志を抱き、具体的な目標を立てる。絶対に達成するという強烈な願望を持ち、成功するまであきらめずにやり抜く。そして、達成した喜びを分かち合う</p>
+                </div>
+            </li>
+
+            <li>
+                <div>
+                    <strong>第4章 行動の原則</strong>
+                    <ul>
+                        <li>人間として何が正しいかで判断する</li>
+                        <li>原理原則に従う</li>
+                        <li>フェアプレイ精神を貫く</li>
+                        <li>公私のけじめをつける</li>
+                        <li>チャレンジを称え合う</li>
+                        <li>楽観的に構想し、悲観的に計画し、楽観的に実行する</li>
+                        <li>どんな仕事も地道に一歩一歩、たゆまぬ努力を続ける</li>
+                        <li>能力は必ず進歩する</li>
+                        <li>常に創造的な仕事をする</li>
+                        <li>本気、本音でぶつかる</li>
+                        <li>ジブンゴト化する</li>
+                        <li>自ら燃える</li>
+                        <li>闘争心を燃やす</li>
+                        <li>一丸となってやり抜く</li>
+                        <li>外を見て内を知る</li>
+                        <li>現地現物で本質を見極める</li>
+                        <li>スピード感をもって決断し行動する</li>
+                        <li>目線を上げる</li>
+                        <li>小善は大悪に似たり、大善は非情に似たり</li>
+                    </ul>
+                </div>
+            </li>
+
+            <li>
+                <div>
+                    <strong>第5章 心を高める</strong>
+                    <ul>
+                        <li>人生・仕事の結果＝考え方×熱意×能力</li>
+                        <li>仕事を通じて人間力を磨く</li>
+                        <li>利他の心で考える</li>
+                        <li>感謝の気持ちを持つ</li>
+                        <li>常に謙虚に素直な心で</li>
+                        <li>常に明るく前向きに取り組む</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
