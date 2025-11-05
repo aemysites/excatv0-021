@@ -1,0 +1,43 @@
+{
+  "variantName": "cards-brand",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2025-11-03T08:07:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.kddi.com/english/vision/",
+    "originPage": "KDDI Vision & Strategies - Brand Message",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "brand-showcase",
+    "imagePattern": "logo-grid",
+    "textLength": "short"
+  },
+  "contentPattern": {
+    "structure": "image only cards",
+    "headingMaxLength": 0,
+    "descriptionMaxLength": 0,
+    "buttonCount": 0,
+    "imageCount": 6
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "brand logo displays",
+      "partner showcases",
+      "service brand sections"
+    ],
+    "notSuitableFor": [
+      "content-heavy cards",
+      "product cards with descriptions",
+      "article cards"
+    ],
+    "similarVariants": []
+  },
+  "usage": {
+    "pagesUsing": ["/english/vision/index", "/corporate/philosophy/index"],
+    "reuseCount": 2,
+    "lastUsed": "2025-11-03T12:01:00.000Z"
+  }
+}

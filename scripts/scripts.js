@@ -63,9 +63,43 @@ async function loadFonts() {
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
+function buildAutoBlocks(main) {
   try {
-    // TODO: add auto block, if needed
+    // Auto-convert first list of anchor links to anchor-nav block
+    const firstSection = main.querySelector(':scope > div');
+    if (firstSection) {
+      const firstList = firstSection.querySelector('ul');
+      if (firstList) {
+        // Check if all links in the list are anchor links (start with #)
+        const links = firstList.querySelectorAll('a');
+        const allAnchors = links.length > 0 && [...links].every((link) => link.getAttribute('href')?.startsWith('#'));
+
+        if (allAnchors) {
+          // buildBlock is already imported at the top from aem.js
+          // But we need to import it here as well for the function scope
+          const table = [[firstList.cloneNode(true)]];
+          const blockEl = document.createElement('div');
+          blockEl.classList.add('anchor-nav');
+          table.forEach((row) => {
+            const rowEl = document.createElement('div');
+            row.forEach((col) => {
+              const colEl = document.createElement('div');
+              colEl.appendChild(col);
+              rowEl.appendChild(colEl);
+            });
+            blockEl.appendChild(rowEl);
+          });
+
+          // Replace the original list with the block
+          const wrapper = firstList.closest('p, div');
+          if (wrapper) {
+            wrapper.replaceWith(blockEl);
+          } else {
+            firstList.replaceWith(blockEl);
+          }
+        }
+      }
+    }
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);

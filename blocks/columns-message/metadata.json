@@ -1,0 +1,43 @@
+{
+  "variantName": "columns-message",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2025-11-03T08:07:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.kddi.com/english/vision/",
+    "originPage": "KDDI Vision & Strategies - CEO Message",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "grey",
+    "density": "spacious",
+    "purpose": "ceo-message",
+    "imagePattern": "side-image",
+    "textLength": "long"
+  },
+  "contentPattern": {
+    "structure": "image + text + button",
+    "headingMaxLength": 200,
+    "descriptionMaxLength": 0,
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "CEO/executive messages",
+      "about us sections",
+      "team introduction sections"
+    ],
+    "notSuitableFor": [
+      "product listings",
+      "article content",
+      "multi-column layouts"
+    ],
+    "similarVariants": []
+  },
+  "usage": {
+    "pagesUsing": ["/english/vision/index", "/corporate/philosophy/index"],
+    "reuseCount": 2,
+    "lastUsed": "2025-11-03T12:01:00.000Z"
+  }
+}

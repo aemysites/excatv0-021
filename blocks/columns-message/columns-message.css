@@ -1,0 +1,51 @@
+.columns-message > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.columns-message img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.columns-message > div > div {
+  order: 1;
+}
+
+.columns-message > div > .columns-message-img-col {
+  order: 0;
+  flex-shrink: 0;
+}
+
+.columns-message > div > .columns-message-img-col img {
+  display: block;
+}
+
+.columns-message h2,
+.columns-message h3 {
+  color: var(--brand-navy);
+  margin-top: 0;
+}
+
+.columns-message p {
+  line-height: 1.8;
+  margin-bottom: 1em;
+}
+
+@media (width >= 900px) {
+  .columns-message > div {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 48px;
+  }
+
+  .columns-message > div > div {
+    flex: 1;
+    order: unset;
+  }
+
+  .columns-message > div > .columns-message-img-col {
+    flex: 0 0 300px;
+  }
+}

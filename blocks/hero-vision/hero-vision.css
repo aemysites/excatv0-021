@@ -1,0 +1,29 @@
+.hero-vision {
+  position: relative;
+  padding: 40px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.hero-vision h1,
+.hero-vision h2,
+.hero-vision h3,
+.hero-vision h4,
+.hero-vision h5,
+.hero-vision h6,
+.hero-vision p {
+  display: none;
+}
+
+.hero-vision picture {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-vision picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
