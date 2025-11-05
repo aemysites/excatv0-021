@@ -1,20 +1,195 @@
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #f5f5f5;
+  font-size: 14px;
+  color: #333;
+}
+
+footer .footer {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 footer .footer > div {
-  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+/* First 4 sections (ブランド, メディア, 施設, オリジナルグッズ) - horizontal layout */
+footer .footer > div > .section:nth-child(-n+4) {
+  background-color: #fff;
+}
+
+/* Wrap the first 4 sections */
+footer .footer > div {
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 footer .footer p {
+  margin: 0 0 8px 0;
+  line-height: 1.6;
+}
+
+footer .footer h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  color: #333;
+}
+
+footer .footer h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #333;
+}
+
+footer .footer ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-@media (width >= 900px) {
+footer .footer li {
+  margin-bottom: 12px;
+}
+
+footer .footer a {
+  color: #0066cc;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+footer .footer a:hover {
+  opacity: 0.7;
+}
+
+/* Brand/Media/Facility logo images in first 4 sections */
+footer .footer > div > .section:nth-child(-n+4) img {
+  max-width: 152px;
+  max-height: 73px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+footer .footer > div > .section:nth-child(-n+4) li {
+  margin-bottom: 16px;
+}
+
+/* KDDI logo button styling for section 5 */
+footer .footer > div > .section:nth-child(5) .button-container a {
+  display: inline-block;
+  background-color: #00a8e1;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+footer .footer > div > .section:nth-child(5) .button-container a:hover {
+  opacity: 1;
+  background-color: #0095ca;
+}
+
+/* Sections 5-9: Two column grid layout */
+footer .footer > div > .section:nth-child(n+5) {
+  grid-column: span 2;
+}
+
+/* Follow us section with social icons */
+footer .footer > div > .section h3 {
+  padding-top: 32px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 32px;
+}
+
+footer .footer > div > .section:has(h3) ul {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+footer .footer > div > .section:has(h3) li {
+  margin: 0;
+}
+
+footer .footer > div > .section:has(h3) a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+/* Hide icon text, show only icon image */
+footer .footer > div > .section:has(h3) a .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+footer .footer > div > .section:has(h3) a .icon img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Hide text next to icons */
+footer .footer > div > .section:has(h3) a .icon + * {
+  display: none;
+}
+
+/* Last section - ENGLISH and copyright */
+footer .footer > div > .section:last-child {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 24px;
+  margin-top: 24px;
+}
+
+footer .footer > div > .section:last-child p {
+  display: inline-block;
+  margin-right: 24px;
+  margin-bottom: 0;
+}
+
+footer .footer > div > .section:last-child p:last-child {
+  margin-left: auto;
+  margin-right: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+@media (width < 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px 20px;
+  }
+
+  footer .footer > div > .section:nth-child(n+5) {
+    grid-column: span 1;
+  }
+
+  footer .footer > div > .section:last-child {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  footer .footer > div > .section:last-child p:last-child {
+    margin-left: 0;
   }
 }
