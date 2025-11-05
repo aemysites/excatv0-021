@@ -1,35 +1,35 @@
 ## ブランド
 
-- [WAKONX](https://biz.kddi.com/wakonx/)
-- [au](https://www.au.com/)
-- [UQ mobile](https://www.uqwimax.jp/)
-- [povo](https://povo.jp/)
+- [![WAKONX](/icons/wakonx-logo.png)](https://biz.kddi.com/wakonx/)
+- [![au](/icons/au-logo.png)](https://www.au.com/)
+- [![UQ mobile](/icons/uq-logo.png)](https://www.uqwimax.jp/)
+- [![povo](/icons/povo-logo.png)](https://povo.jp/)
 
 ---
 
 ## メディア
 
-- [KDDI ニュースルーム](https://newsroom.kddi.com/)
-- [KDDIトビラ](https://tobira.kddi.com/)
-- [be CONNECTED.](https://biz.kddi.com/beconnected/)
-- [MUGENLABO Magazine](https://mugenlabo-magazine.kddi.com/)
-- [& KDDI](https://career.kddi.com/andkddi/)
+- [![KDDI ニュースルーム](/icons/media-logo-01.png)](https://newsroom.kddi.com/)
+- [![KDDIトビラ](/icons/media-logo-02.png)](https://tobira.kddi.com/)
+- [![be CONNECTED.](/icons/media-logo-03.png)](https://biz.kddi.com/beconnected/)
+- [![MUGENLABO Magazine](/icons/media-logo-04.png)](https://mugenlabo-magazine.kddi.com/)
+- [![& KDDI](/icons/media-logo-05.png)](https://career.kddi.com/andkddi/)
 
 ---
 
 ## 施設
 
-- [GINZA 456](https://ginza456.kddi.com/)
-- [KDDI MUSEUM](https://www.kddi.com/museum/)
-- [KDDI ART GALLERY](https://www.kddi.com/art/)
-- [KDDI パラボラ館](https://www.kddi.com/parabola/)
-- [LINK FOREST](https://link-forest.jp/)
+- [![GINZA 456](/icons/facility-logo-01.png)](https://ginza456.kddi.com/)
+- [![KDDI MUSEUM](/icons/facility-logo-02.png)](https://www.kddi.com/museum/)
+- [![KDDI ART GALLERY](/icons/facility-logo-03.png)](https://www.kddi.com/art/)
+- [![KDDI パラボラ館](/icons/facility-logo-04.png)](https://www.kddi.com/parabola/)
+- [![LINK FOREST](/icons/facility-logo-05.png)](https://link-forest.jp/)
 
 ---
 
 ## オリジナルグッズ
 
-- [つなぐアイテム コレクションショップ](https://official-brand-goods.kddi.com/)
+- [![つなぐアイテム コレクションショップ](/icons/goods-logo.png)](https://official-brand-goods.kddi.com/)
 
 ---
 

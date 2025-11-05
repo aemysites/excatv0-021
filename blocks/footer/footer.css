@@ -68,6 +68,19 @@ footer .footer a:hover {
   opacity: 0.7;
 }
 
+/* Brand/Media/Facility logo images in first 4 sections */
+footer .footer > div > .section:nth-child(-n+4) img {
+  max-width: 152px;
+  max-height: 73px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+footer .footer > div > .section:nth-child(-n+4) li {
+  margin-bottom: 16px;
+}
+
 /* KDDI logo button styling for section 5 */
 footer .footer > div > .section:nth-child(5) .button-container a {
   display: inline-block;
