@@ -76,18 +76,22 @@ header nav {
     padding: 18px 0;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     width: 100%;
+    gap: 0;
   }
 
   header nav .nav-sections > .default-content-wrapper {
     flex: 0 0 auto;
+    display: flex;
+    align-items: center;
   }
 
   header nav .nav-sections .nav-bottom-container {
     display: flex;
     align-items: center;
-    margin-left: auto;
     flex-shrink: 0;
+    margin-left: 0;
   }
 
   header nav[aria-expanded='true'] {
@@ -230,18 +234,32 @@ header nav .nav-sections ul > li {
 header nav .nav-sections ul > li > a {
   padding: 8px 4px;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.2s ease;
+  position: relative;
 }
 
-header nav .nav-sections ul > li > a:hover {
-  border-bottom-color: #0066cc;
+header nav .nav-sections ul > li > a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -18px;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+header nav .nav-sections ul > li > a:hover::after {
+  background-color: #0066cc;
 }
 
 /* Active page indicator */
+header nav .nav-sections ul > li > a[aria-current="page"]::after,
+header nav .nav-sections ul > li > a.active::after {
+  background-color: #0066cc;
+}
+
 header nav .nav-sections ul > li > a[aria-current="page"],
 header nav .nav-sections ul > li > a.active {
-  border-bottom-color: #0066cc;
   color: #0066cc;
 }
 
