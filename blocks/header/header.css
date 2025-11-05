@@ -27,23 +27,25 @@ header nav {
   font-family: var(--body-font-family);
 }
 
-header nav[aria-expanded='true'] {
-  grid-template:
-    'hamburger brand' var(--nav-height)
-    'sections sections' 1fr
-    'tools tools' var(--nav-height) / auto 1fr;
-  overflow-y: auto;
-  min-height: 100dvh;
+@media (width < 900px) {
+  header nav[aria-expanded='true'] {
+    grid-template:
+      'hamburger brand' var(--nav-height)
+      'sections sections' 1fr
+      'tools tools' var(--nav-height) / auto 1fr;
+    overflow-y: auto;
+    min-height: 100dvh;
+  }
 }
 
 @media (width >= 900px) {
   header nav {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto 1fr auto;
     grid-template-rows: auto auto;
     grid-template-areas:
-      "brand tools"
-      "sections sections";
+      ". . tools"
+      "brand sections sections";
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 40px;
