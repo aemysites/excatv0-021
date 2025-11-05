@@ -18,4 +18,4 @@
 
 ---
 
-障害情報 [[個人](/personal/notice/) ・ [法人](https://biz.kddi.com/notice/)]{.bottom}
+障害情報 [個人](/personal/notice/) ・ [法人](https://biz.kddi.com/notice/)
