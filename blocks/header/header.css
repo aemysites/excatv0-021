@@ -273,7 +273,7 @@ header nav .nav-sections ul > li > ul > li {
 
 @media (width >= 900px) {
   header nav .nav-sections {
-    display: block;
+    display: flex !important;
     visibility: visible;
     white-space: nowrap;
   }
